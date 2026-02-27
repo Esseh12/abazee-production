@@ -1,0 +1,152 @@
+@import 'tailwindcss';
+
+:root {
+	--background: #ffffff;
+	--foreground: #171717;
+	--darkBlue: #00425f;
+	--secondaryBlue: #479fc8;
+}
+
+@theme inline {
+	--color-background: var(--background);
+	--color-foreground: var(--foreground);
+	--color-darkBlue: var(--darkBlue);
+	--color-secondaryBlue: var(--secondaryBlue);
+}
+
+body {
+	background: var(--background);
+	color: var(--foreground);
+}
+
+body {
+	background: #080808;
+}
+.fd {
+	font-family: 'Bebas Neue', sans-serif;
+	letter-spacing: 0.04em;
+}
+.fb {
+	font-family: 'DM Sans', sans-serif;
+}
+
+@keyframes fadeUp {
+	from {
+		opacity: 0;
+		transform: translateY(26px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+@keyframes grain {
+	0%,
+	100% {
+		transform: translate(0, 0);
+	}
+	20% {
+		transform: translate(-1%, -2%);
+	}
+	40% {
+		transform: translate(2%, 1%);
+	}
+	60% {
+		transform: translate(-1%, 2%);
+	}
+	80% {
+		transform: translate(2%, -1%);
+	}
+}
+@keyframes scrollBounce {
+	0%,
+	100% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(7px);
+	}
+}
+
+.afu1 {
+	animation: fadeUp 0.8s 0s ease forwards;
+}
+.afu2 {
+	animation: fadeUp 0.8s 0.1s ease forwards;
+	opacity: 0;
+}
+.afu3 {
+	animation: fadeUp 0.8s 0.2s ease forwards;
+	opacity: 0;
+}
+.afu4 {
+	animation: fadeUp 0.8s 0.32s ease forwards;
+	opacity: 0;
+}
+.afu5 {
+	animation: fadeUp 0.8s 0.44s ease forwards;
+	opacity: 0;
+}
+
+.grain-layer {
+	position: absolute;
+	inset: 0;
+	pointer-events: none;
+	overflow: hidden;
+	z-index: 1;
+}
+.grain-layer::after {
+	content: '';
+	position: absolute;
+	inset: -50%;
+	width: 200%;
+	height: 200%;
+	background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+	opacity: 0.04;
+	animation: grain 0.45s steps(1) infinite;
+}
+
+.amber-bar {
+	background: linear-gradient(90deg, #f59e0b 0%, transparent 100%);
+}
+.form-glow {
+	background: radial-gradient(
+		ellipse 80% 60% at 50% 0%,
+		rgba(245, 158, 11, 0.07) 0%,
+		transparent 70%
+	);
+}
+.scroll-anim {
+	animation: fadeUp 1s 1s ease forwards;
+	opacity: 0;
+}
+.scroll-line {
+	animation: scrollBounce 1.6s ease infinite;
+}
+
+/* Each slide: 82% mobile, 50% sm, 35% lg */
+.c-slide {
+	flex: 0 0 82%;
+	padding: 0 8px;
+	box-sizing: border-box;
+}
+@media (min-width: 640px) {
+	.c-slide {
+		flex: 0 0 50%;
+	}
+}
+@media (min-width: 1024px) {
+	.c-slide {
+		flex: 0 0 35%;
+	}
+}
+
+.c-img {
+	transition:
+		transform 0.5s cubic-bezier(0.23, 1, 0.32, 1),
+		box-shadow 0.5s ease;
+}
+.c-img:hover {
+	transform: scale(1.03);
+	box-shadow: 0 32px 64px rgba(0, 0, 0, 0.8) !important;
+}
