@@ -6,8 +6,9 @@ const plusJakartan = Plus_Jakarta_Sans({
 });
 
 export const metadata = {
-	title: 'Quickteller Business campaign',
-	description: 'Quickteller Business campaign',
+	title: 'Sony Venice 2 Masterclass Registration',
+	description:
+		'Join us for an exclusive hands-on experience with the Sony Venice 2. Register now to secure your spot at this exciting event!',
 };
 
 export default function RootLayout({ children }) {

@@ -15,135 +15,157 @@ export function reservationEmailTemplate({
 	return `
 <!DOCTYPE html>
 <html lang="en">
-  <body style="margin:0; padding:0; background:#0a0a0a; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;">
 
-    <div style="max-width:620px; margin:40px auto; background:#111111; border-radius:4px; overflow:hidden;">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VENICE 2 Masterclass – RSVP Confirmed</title>
+</head>
 
-      <!-- Header -->
-      <div style="background:#000000; padding:32px 40px; border-bottom:1px solid #1e1e1e;">
-        <div style="display:flex; align-items:center; justify-content:space-between;">
-          <div>
-            <p style="margin:0; font-size:10px; letter-spacing:4px; text-transform:uppercase; color:#f0a500; font-weight:700;">Sony</p>
-            <h1 style="margin:4px 0 0; font-size:22px; font-weight:300; color:#ffffff; letter-spacing:2px; text-transform:uppercase;">Sony Venice 2</h1>
-          </div>
-          <div style="text-align:right;">
-            <p style="margin:0; font-size:10px; letter-spacing:3px; text-transform:uppercase; color:#555555;">RSVP Confirmed</p>
-          </div>
-        </div>
-      </div>
+<body style="margin:0; padding:0; background-color:#f4f4f4; -webkit-font-smoothing:antialiased;">
 
-      <!-- Hero Strip -->
-      <div style="background:linear-gradient(135deg, #f0a500 0%, #c47d00 100%); padding:20px 40px;">
-        <p style="margin:0; font-size:11px; letter-spacing:4px; text-transform:uppercase; color:#000000; font-weight:700; opacity:0.7;">Your reservation is confirmed</p>
-        <h2 style="margin:6px 0 0; font-size:26px; font-weight:700; color:#000000; letter-spacing:-0.5px;">
-          ${firstname} ${lastname}
-        </h2>
-      </div>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f4f4f4; padding: 40px 0;">
+    <tr>
+      <td align="center">
+        <table width="600" cellpadding="0" cellspacing="0" border="0"
+          style="max-width:600px; width:100%; background:#ffffff;">
 
-      <!-- Body -->
-      <div style="padding:36px 40px; background:#111111;">
+          <!-- Logo Header -->
+          <tr class="">
+            <td style="padding:15px 15px 15px; border-bottom:1px solid #e8e8e8;">
+              <img src="https://pro.sony/s3/2021/10/25153548/CineAlta_trans_overlay.png" alt="CineAlta" width="120"
+                style="display:block; height:auto;" />
+            </td>
+          </tr>
 
-        <p style="font-size:15px; color:#cccccc; margin:0 0 24px; line-height:1.7;">
-          Thank you for registering for the <strong style="color:#ffffff;">Sony Venice 2 Experience</strong>. 
-          We've received your RSVP and your spot is locked in. Here's a summary of your submission:
-        </p>
+          <!-- Title Block -->
+          <tr>
+            <td style="padding:40px 48px 0;">
+              <p
+                style="margin:0 0 10px; font-family:Georgia, 'Times New Roman', serif; font-size:11px; letter-spacing:3px; text-transform:uppercase; color:#999999;">
+                RSVP Confirmed</p>
+              <h1
+                style="margin:0; font-family:Georgia, 'Times New Roman', serif; font-size:28px; font-weight:400; color:#111111; line-height:1.3; letter-spacing:-0.3px;">
+                Sony VENICE 2<br />Masterclass
+              </h1>
+              <div style="margin-top:20px; width:40px; height:2px; background-color:#000000;"></div>
+            </td>
+          </tr>
 
-        <!-- Event Details Block -->
-        <div style="background:#1a1a1a; border:1px solid #2a2a2a; border-radius:4px; padding:24px; margin-bottom:24px;">
-          <p style="margin:0 0 14px; font-size:10px; letter-spacing:3px; text-transform:uppercase; color:#f0a500; font-weight:700;">Event Details</p>
-          <table style="width:100%; border-collapse:collapse; font-size:14px; color:#cccccc;">
-            <tr>
-              <td style="padding:6px 0; color:#666666; width:45%;">Date / Slot</td>
-              <td style="padding:6px 0; color:#ffffff; font-weight:600;">${slot}</td>
-            </tr>
-            <tr>
-              <td style="padding:6px 0; color:#666666;">Party Size</td>
-              <td style="padding:6px 0; color:#ffffff; font-weight:600;">${partySize} ${Number(partySize) === 1 ? 'person' : 'people'}</td>
-            </tr>
-            <tr>
-              <td style="padding:6px 0; color:#666666;">Role</td>
-              <td style="padding:6px 0; color:#ffffff; font-weight:600;">${job}</td>
-            </tr>
-          </table>
-        </div>
+          <!-- Greeting -->
+          <tr>
+            <td style="padding:32px 48px 0;">
+              <p
+                style="margin:0; font-family:Helvetica Neue, Helvetica, Arial, sans-serif; font-size:15px; color:#333333; line-height:1.75;">
+                Hello ${firstname},
+              </p>
+              <p
+                style="margin:16px 0 0; font-family:Helvetica Neue, Helvetica, Arial, sans-serif; font-size:15px; color:#555555; line-height:1.75;">
+                Your RSVP has been received and confirmed. We look forward to welcoming you to the Sony VENICE 2
+                Masterclass. Below is a summary of your registration.
+              </p>
+            </td>
+          </tr>
 
-        <!-- Contact Block -->
-        <div style="background:#1a1a1a; border:1px solid #2a2a2a; border-radius:4px; padding:24px; margin-bottom:24px;">
-          <p style="margin:0 0 14px; font-size:10px; letter-spacing:3px; text-transform:uppercase; color:#f0a500; font-weight:700;">Contact Info</p>
-          <table style="width:100%; border-collapse:collapse; font-size:14px; color:#cccccc;">
-            <tr>
-              <td style="padding:6px 0; color:#666666; width:45%;">Email</td>
-              <td style="padding:6px 0; color:#ffffff;">${email}</td>
-            </tr>
-            <tr>
-              <td style="padding:6px 0; color:#666666;">Phone</td>
-              <td style="padding:6px 0; color:#ffffff;">${phone}</td>
-            </tr>
-          </table>
-        </div>
+          <!-- Contact Details -->
+          <tr>
+            <td style="padding:36px 48px 0;">
+              <p
+                style="margin:0 0 18px; font-family:Helvetica Neue, Helvetica, Arial, sans-serif; font-size:10px; letter-spacing:3px; text-transform:uppercase; color:#999999; font-weight:600;">
+                Contact</p>
+              <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td
+                    style="padding:11px 0; border-top:1px solid #eeeeee; font-family:Helvetica Neue, Helvetica, Arial, sans-serif; font-size:13px; color:#999999; width:45%;">
+                    Email</td>
+                  <td
+                    style="padding:11px 0; border-top:1px solid #eeeeee; font-family:Helvetica Neue, Helvetica, Arial, sans-serif; font-size:13px; color:#111111; font-weight:500;">
+                    ${email}</td>
+                </tr>
+                <tr>
+                  <td
+                    style="padding:11px 0; border-top:1px solid #eeeeee; border-bottom:1px solid #eeeeee; font-family:Helvetica Neue, Helvetica, Arial, sans-serif; font-size:13px; color:#999999;">
+                    Phone</td>
+                  <td
+                    style="padding:11px 0; border-top:1px solid #eeeeee; border-bottom:1px solid #eeeeee; font-family:Helvetica Neue, Helvetica, Arial, sans-serif; font-size:13px; color:#111111; font-weight:500;">
+                    ${phone}</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
 
-        <!-- Camera Details Block -->
-        <div style="background:#1a1a1a; border:1px solid #2a2a2a; border-radius:4px; padding:24px; margin-bottom:24px;">
-          <p style="margin:0 0 14px; font-size:10px; letter-spacing:3px; text-transform:uppercase; color:#f0a500; font-weight:700;">Camera Profile</p>
-          <table style="width:100%; border-collapse:collapse; font-size:14px; color:#cccccc;">
-            <tr>
-              <td style="padding:6px 0; color:#666666; width:45%;">Owns Sony Camera</td>
-              <td style="padding:6px 0; color:#ffffff; font-weight:600;">${ownsSonyCamera ? 'Yes' : 'No'}</td>
-            </tr>
-            ${
-							ownsSonyCamera && sonyModel ?
-								`
-            <tr>
-              <td style="padding:6px 0; color:#666666;">Sony Model</td>
-              <td style="padding:6px 0; color:#ffffff;">${sonyModel}</td>
-            </tr>`
-							:	''
-						}
-            <tr>
-              <td style="padding:6px 0; color:#666666;">Current Camera</td>
-              <td style="padding:6px 0; color:#ffffff;">${currentCamera}</td>
-            </tr>
-            <tr>
-              <td style="padding:6px 0; color:#666666;">Multi-Camera Matching</td>
-              <td style="padding:6px 0; color:#ffffff;">${matchingEnvironment}</td>
-            </tr>
-          </table>
+          <!-- Event Details -->
+          <tr>
+            <td style="padding:36px 48px 0;">
+              <p
+                style="margin:0 0 18px; font-family:Helvetica Neue, Helvetica, Arial, sans-serif; font-size:10px; letter-spacing:3px; text-transform:uppercase; color:#999999; font-weight:600;">
+                Event Details</p>
+              <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td
+                    style="padding:11px 0; border-top:1px solid #eeeeee; font-family:Helvetica Neue, Helvetica, Arial, sans-serif; font-size:13px; color:#999999; width:45%;">
+                    Date</td>
+                  <td
+                    style="padding:11px 0; border-top:1px solid #eeeeee; font-family:Helvetica Neue, Helvetica, Arial, sans-serif; font-size:13px; color:#111111; font-weight:500;">
+                    ${slot}</td>
+                </tr>
+                <tr>
+                  <td
+                    style="padding:11px 0; border-top:1px solid #eeeeee; font-family:Helvetica Neue, Helvetica, Arial, sans-serif; font-size:13px; color:#999999;">
+                    Party Size</td>
+                  <td
+                    style="padding:11px 0; border-top:1px solid #eeeeee; font-family:Helvetica Neue, Helvetica, Arial, sans-serif; font-size:13px; color:#111111; font-weight:500;">
+                    ${partySize} ${Number(partySize) === 1 ? 'person' : 'people'}</td>
+                </tr>
+                <tr>
+                  <td
+                    style="padding:11px 0; border-top:1px solid #eeeeee; border-bottom:1px solid #eeeeee; font-family:Helvetica Neue, Helvetica, Arial, sans-serif; font-size:13px; color:#999999;">
+                    Role</td>
+                  <td
+                    style="padding:11px 0; border-top:1px solid #eeeeee; border-bottom:1px solid #eeeeee; font-family:Helvetica Neue, Helvetica, Arial, sans-serif; font-size:13px; color:#111111; font-weight:500;">
+                    ${job}</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
 
-          <!-- Color Workflow -->
-          <div style="margin-top:16px; padding-top:16px; border-top:1px solid #2a2a2a;">
-            <p style="margin:0 0 6px; font-size:12px; color:#666666; text-transform:uppercase; letter-spacing:2px;">Color Workflow</p>
-            <p style="margin:0; font-size:14px; color:#cccccc; line-height:1.6;">${colorWorkflow}</p>
-          </div>
-        </div>
 
-        <p style="font-size:14px; color:#888888; margin:0 0 8px; line-height:1.7;">
-          We'll be in touch with any updates closer to the event. If you have any questions, 
-          don't hesitate to reach out.
-        </p>
 
-        <p style="font-size:14px; color:#888888; margin:0; line-height:1.7;">
-          See you on <strong style="color:#f0a500;">${slot}</strong>.
-        </p>
 
-      </div>
 
-      <!-- Divider -->
-      <div style="height:1px; background:linear-gradient(to right, transparent, #f0a500, transparent);"></div>
+          <!-- Closing Note -->
+          <tr>
+            <td style="padding:36px 48px 48px;">
+              <p
+                style="margin:0; font-family:Helvetica Neue, Helvetica, Arial, sans-serif; font-size:14px; color:#555555; line-height:1.75;">
+                We'll be in touch with venue details and any updates before the event. If you have any questions in the
+                meantime, feel free to reach out.
+              </p>
+              <p
+                style="margin:24px 0 0; font-family:Georgia, 'Times New Roman', serif; font-size:14px; color:#111111; line-height:1.6;">
+                The Sony Event Team
+              </p>
+            </td>
+          </tr>
 
-      <!-- Footer -->
-      <div style="padding:28px 40px; background:#0d0d0d;">
-        <p style="font-size:12px; color:#444444; margin:0 0 8px; line-height:1.7;">
-          This confirmation was sent to 
-          <a href="mailto:${email}" style="color:#f0a500; text-decoration:none;">${email}</a>. 
-          If this wasn't you, please disregard this message.
-        </p>
-        <p style="font-size:11px; color:#333333; margin:16px 0 0; letter-spacing:2px; text-transform:uppercase;">
-          Sony CineAlta &nbsp;&bull;&nbsp; ${new Date().getFullYear()}
-        </p>
-      </div>
+          <!-- Footer -->
+          <tr>
+            <td style="padding:24px 48px; background:#f9f9f9; border-top:1px solid #e8e8e8;">
+              <p
+                style="margin:0; font-family:Helvetica Neue, Helvetica, Arial, sans-serif; font-size:11px; color:#aaaaaa; line-height:1.7;">
+                This email was sent to <a href="mailto:${email}" style="color:#aaaaaa;">${email}</a> because you
+                registered for the Sony VENICE 2 Masterclass. If this wasn't you, please disregard this message.
+              </p>
+            </td>
+          </tr>
 
-    </div>
+        </table>
+      </td>
+    </tr>
+  </table>
 
-  </body>
-</html>`;
+</body>
+
+</html>
+  `;
 }
