@@ -185,7 +185,14 @@ export default function ReservationForm() {
 					onChange={handleChange}
 					required
 					placeholder='Select your role'
-					options={['DOP', 'Producer', 'Gaffer', 'DIT', 'Marketer']}
+					options={[
+						'DOP',
+						'Producer',
+						'Gaffer',
+						'1st Ac',
+						'Executive',
+						'Director',
+					]}
 				/>
 
 				{/* Divider */}

@@ -188,7 +188,8 @@ export default function Home() {
 									RSVP
 								</h2>
 								<p className='text-zinc-500 text-sm max-w-sm mx-auto'>
-									Fill in your details below. We'll confirm your spot via email.
+									Fill in your details below. We&apos;ll confirm your spot via
+									email.
 								</p>
 							</div>
 							<div
